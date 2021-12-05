@@ -1,153 +1,196 @@
 
-<!doctype html>
-<!--[if lt IE 9]>
-<html lang="en" class="no-js old-ie">
-<![endif]-->
-<html lang="en" class="no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-1b97bb0221aaed93003",applicationID:"542358461"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="google" content="notranslate">
-	<title>OİS</title>
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/custom.css?5" rel="stylesheet">
-    <link href="/css/new.css?13" rel="stylesheet">
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<!-- Fav & Touch Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico?1">
-	<link rel="apple-touch-icon-precomposed" href="/img/icons/apple-touch-iphone.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/icons/apple-touch-ipad.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/icons/apple-touch-iphone4.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/icons/apple-touch-ipad-retina.png" />
-
-    <script src="/js/jquery-1.8.0.min.js"></script>
-	<script src="/js/bootstrap.min.js?2"></script>
-    <script src="/js/jquery.inputmask.js"></script>
-    <script src="/js/jquery.inputmask.extensions.js"></script>
-    <script src="/js/jquery.selectCombo.js?2"></script>
-    <script src="/js/jquery.blockUI.js"></script>
-    <script>
-        GUNCEL_SEZON='2021-2022';
-        GUNCEL_DONEM='1';
-    </script>
-    <script type="text/javascript" src="/jscript/main"></script>
-    <script type="text/javascript" src="/js/jquery.autocomplete.js"></script>
-    <script type="text/javascript" src="/js/jquery.bgiframe.min.js"></script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-1b97bb0221aaed93003",applicationID:"542358461"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
 </head>
 <body>
-	<p id="back-top"><a href="#top"><i class="icon-chevron-up icon-2x"></i></a></p>
-    	<nav class="sidr" id="sidr-left8"><span>Ders İşlemleri</span><a  href="/ogrenciler/ogrenci/slot">Slotlar</a><a  href="/ogrenciler/derssecme/ogrindex">Ders Seçme</a><a  href="/ogrenciler/staj/basvuruliste">Uygulamalı Eğitim Başvuru</a><a  href="/ogrenciler/ogrenci/hazirlikyazokulu">Hazırlık Yaz Okulu Derse Yazılma</a><a  href="/ogrenciler/derssecme/tekderssinavi">Tek Ders Sınavı Başvurusu</a></nav><nav class="sidr" id="sidr-left7"><span>Belgeler</span><a  target=new  href="/ogrenciler/belge/ogrkarne">Karne</a><a  target=new  href="/ogrenciler/belge/ogrdersprogrami">Ders Programı</a><a  target=new  href="/hazirlik/hazirliksinav/ogrpreptranskript">Hazırlık Karne</a><a  target=new  href="/ogrenciler/belge/dersdanismanonay">Ders Onay Belgesi</a><a  target=new  href="/ogrenciler/belge/kesinkayitbelgesi">Kesin Kayıt Belgesi</a><a  href="/ogrenciler/belgetalep/duzenle2">Online Belge Talep</a><a  target=new  href="/ogrenciler/belge/ogrtranskript">Transkript</a></nav><nav class="sidr" id="sidr-left9"><span>Diğer İşlemler</span><a  href="/ogrenciler/ogrenci/paroladegistirme">Parola Değiştirme</a><a  href="/ogrenciler/belge/ogrtranskripthesap">GNO Hesaplama</a><a  href="/crm/pdr/basvuru">PDR Başvuru</a><a  href="/ogrenciler/engelbilgileri/duzenle">Engel Bilgileriniz</a><a  href="/index/beyan/t/heskodu">Hes Kodu Güncelle</a><a  href="/ogrenciler/iliskikesme/beyan">İlişki Kesme Talebi</a><a  href="/ogrenciler/proje/danismansec">Tez/Proje Danışmanı Seçme</a><a  href="/ogrenciler/proje/konusec">Tez/Proje Konu Seçme</a>
-                        <div class="accordion">
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" href="#collapse395">
-                                        Kulüp<i class="icon-chevron-down"></i>
-                                    </a>
-                                </div>
-                                <div id="collapse395" class="accordion-body collapse">
-                                    <div class="accordion-inner"><a  href="/ogrenciler/kulup/secimpuanduzenle">Kulüp Seçimlerine Oy Kullan</a><a  href="/ogrenciler/kulup/ogrencikulupbasvuru">Kulüp Üyelik Formu</a><a  href="/ogrenciler/kulup/ogrencikulupbasvuruonay">Kulüp Üyelik Kontrol</a><a  href="/ogrenciler/kulup/secimliste">Öğrenci Kulübüne Başkan Adaylık Başvurusu</a></div>
-                            </div>
-                        </div>
-                    </div></nav><div class="navbar-left">
-                    <ul class="sortable list"><li class="r3"><a id="left-menu8" href="#sidr-left8"><i class="icon-book icon-2x"></i></a></li><li class="r7"><a id="left-menu7" href="#sidr-left7"><i class="icon-file icon-2x"></i></a></li><li class="r8"><a id="left-menu9" href="#sidr-left9"><i class="icon-th icon-2x"></i></a></li></ul></div>	<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner gray-back align">
+<link rel="stylesheet" type="text/css" href="/css/belge.css?1" />
+<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
 
-                    <a href="/" class="brand"><img src="/images/uni_min_logo.png" />
-                                                                            					<span>Öğrenci İşleri Sistemi</span></a>
-                                <div class="main-search center dropdown">
-							<input type="text" class="input-xxlarge ara dropdown-toggle" id="uygulama_ara" role="menu" aria-labelledby="dLabel" placeholder="Uygulamada Ara ..." data-toggle="dropdown">
-							<button type="button" class="ara-button" onclick="uygulamaAra()"><i class="icon-search"></i></button>
-							<ul id="uygulama_ara_sonuc" class="dropdown-menu ara" role="menu"></ul>
-  					</div>
-                                <div class="session" id="session_countdown"><i class="icon-time"></i> <b class="timer"></b> sonra oturumunuz sonlanacaktır</div>
-                <div class="user-info">
-  						<ul class="pull-left">
-						<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i> <img src="data:image/jpg;base64,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"/></a>
-							<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                <li><a>HALUK ENES TELLİ (OGR - 2104010009)</a></li>
-                                                                                                                                                                <li><a href="/ogrenciler/ogrenci/paroladegistirme"><i class="icon-lock"></i> Parola Değiştirme</a></li>
-                                                                                                <li><a href="/ogrenciler/ogrenci/kisisel"><i class="icon-edit"></i> Kişisel Bilgiler</a></li>
-                                                                                                                                    <li><a href="/index/index/dil_degistir/1/"><i class="icon-flag"></i> Dil Değiştir</a></li>
-                                                                								<li><a href="/auth/logout"><i class="icon-off"></i> Çıkış</a></li>
-							</ul>
-  						</li>
-  						</ul>
-                      					</div>
-			</div>
-	</div>
-		<div class="main">
-                        <div id="container" class="transitions-enabled clearfix main-margin">
+        $("#imzaci").change(function(){
+            var imzaci = $(this).val();
+                        if(imzaci=='8')
+            {
+                $('#b_unvan').val('Öğrenci İşleri Müdürü');
+            }
+                        if(imzaci=='6')
+            {
+                $('#b_unvan').val('Genel Sekreter');
+            }
+                        if(imzaci=='147')
+            {
+                $('#b_unvan').val('Rektör Yardımcısı');
+            }
+                        if(imzaci=='146')
+            {
+                $('#b_unvan').val('Rektör');
+            }
+                        if(imzaci=='198')
+            {
+                $('#b_unvan').val('Müdür');
+            }
+                        if(imzaci=='284')
+            {
+                $('#b_unvan').val('Müdür');
+            }
+                        if(imzaci=='169')
+            {
+                $('#b_unvan').val('Genel Sekreter Yardımcısı');
+            }
             
-<script type="text/javascript" >
-<!--
-$(document).ready(function(){
-
-	$("span.duyuru_konu").toggle(function(){
-		$(this).parent().find("div").show("fast");
-	},function(){
-		$(this).parent().find("div").hide("fast");
-	});
-
-
-	$(window).bind('resize', function() {
-
-	});
-});
-//-->
-</script>
-        </div>
-	</div>
-	</div>
-
-    <script>
-    $(function(){
-                        widgetYukle('dersler');
-                widgetYukle('yardim');
-                widgetYukle('devamogriliskikesme');
-                widgetYukle('duyurular');
-                widgetYukle('mesajkutusu');
-                widgetYukle('ogrenimbilgileri');
-                widgetYukle('adayogrencibasvuru');
-                widgetYukle('derssinav');
-                widgetYukle('derssinav');
-                widgetYukle('derssinav');
-                widgetYukle('derssinav');
-                widgetYukle('derssinav');
-                widgetYukle('derssinav');
-                widgetYukle('derssinav');
-                widgetYukle('duyurularkariyer');
-                widgetYukle('capyandal');
-                widgetYukle('capyandal');
-                widgetYukle('capyandal');
-                widgetYukle('capyandal');
-                widgetYukle('capyandal');
-                widgetYukle('capyandal');
-                widgetYukle('capyandal');
-                widgetYukle('capyandal');
-                widgetYukle('capyandal');
-                widgetYukle('capyandal');
-                widgetYukle('capyandal');
-                widgetYukle('capyandal');
-                        startSessionCountdown(3600);
+        });
     });
-    var BASE_URL='';
-    var WIDGETS=[];
-    
-    
-	        </script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1120134-93"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1120134-93');
 </script>
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"NRJS-1b97bb0221aaed93003","applicationID":"542358461","transactionName":"ZQBXNRMCCEFUBRJdWFxKdAIVCglcGgIDUlZHCUFOCA0CV01JD1pTVx0=","queueTime":0,"applicationTime":63,"atts":"SUdUQ1sYG08=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+<style>
+    .sonuc th
+    {
+        text-align: left;
+    }
+    .transkript {
+        font-size: 10.5px;
+    }
+    .green
+    {
+        color:#007700;
+    }
+    .red
+    {
+        color:#770000;
+    }
+    <!--
+    th{text-align: left;}
+    -->
+</style>
+<table class="a4" align="center"><tr><td>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-top:1.5cm">
+
+		  	<tr>
+		  	<td align="center" border="0" cellpadding="2" cellspacing="2">
+		  	<table class="a4  Beykoz">
+			  	<tr>
+				  	<td width="120">
+				  						  			<img src="/images/duzlogo.jpg"  />
+				  						  	</td>
+                    <td style="padding-right: 40px;">
+                            <h1 style="text-align: center">BEYKOZ ÜNİVERSİTESİ</h1>
+                            <h2 style="text-align: center">Öğrenci İşleri Müdürlüğü</h2>
+                            <h3 style="text-align: center">Hazırlık Not Belgesi</h3>
+                   </td>
+                   <td width="120">
+
+                   </td>
+			  	</tr>
+		  	</table>
+		  	</td>
+		  	</tr>
+            </table>
+            <table align="center" class="a4">
+                        <tr>
+                            <td class=bilgi_baslik width="15%"><b>TC Kimlik No</b>
+                            </td>
+                            <td class=bilgi_satir_sade width="25%">20128891168</td>
+
+                            <td class=bilgi_baslik width="15%"><b>Fakülte</b></td>
+                            <td class=bilgi_satir
+                                width="45%">Mühendislik ve Mimarlık Fakültesi</td>
+                        </tr>
+                        <tr>
+                            <td class=bilgi_baslik width="15%"><b>Öğrenci No</b>
+                            </td>
+                            <td class=bilgi_satir_sade width="25%">2104010009</td>
+
+                            <td class=bilgi_baslik width="15%"><b>Bölümü</b></td>
+                            <td class=bilgi_satir_sade
+                                width="25%">Bilgisayar Mühendisliği Bölümü</td>
+                        </tr>
+                        <tr>
+                            <td class=bilgi_baslik width="15%"><b>Adı</b></td>
+                            <td class=bilgi_satir_sade width="25%">HALUK ENES</td>
+
+                            <td class=bilgi_baslik width="15%"><b>Program</b></td>
+                            <td class=bilgi_satir_sade
+                                width="25%">Bilgisayar Mühendisliği (İngilizce)</td>
+                        </tr>
+                        <tr>
+                            <td class=bilgi_baslik width="15%"><b>Soyadı</b></td>
+                            <td class=bilgi_satir_sade width="25%">TELLİ</td>
+
+                            <td class=bilgi_baslik width="15%">
+                                <b>Eğitim Düzeyi</b></td>
+                            <td class=bilgi_satir_sade
+                                width="25%">Örgün Öğretim</td>
+                        </tr>
+                        <tr>
+                            <td class=bilgi_baslik width="15%"><b>Kayıt Tarihi</b>
+                            </td>
+                            <td class=bilgi_satir_sade
+                                width="25%">07.09.2021</td>
+                                                        <td class=bilgi_baslik width="15%">&nbsp; </td>
+                            <td class=bilgi_satir_sade width="15%">&nbsp; </td>
+                                                    </tr
+                    </table>
+
+<table>
+    <tr>
+        <td style="font-size: 12px;">
+            Akademik Yıl:</b> 2021-2022        </td>
+    </tr>
+	<tr>
+		<td>
+            <table class="transkript" width="374px" style="float:left;margin-top:10px;clear:both">
+    	<tr>
+		<td colspan="2">
+		<b>Modül</b>: 1 <b>Sınıf</b>: A2-B1.02		</td>
+	</tr>
+    				<tr><th>SINAV</th><td align="center"><b>PUAN</b></td></tr>
+
+							<tr>
+					<td>Achievement Test (AcT) - 01</td>
+					<td align="center">94</td>
+				</tr>
+
+			
+		
+                <tr>
+		<th>ORTALAMA</th>
+		<td align="center"><b>4.70</b></td>
+	</tr>
+        <tr>
+        <th>Success Status</th>
+        <td align="center"><b class="red">BAŞARISIZ</b></td>
+    </tr>
+            <tr>
+            <th colspan="2">DEVAMSIZLIK</th>
+        </tr>
+                <tr>
+            <td>Academic Skills</td>
+            <td align="center"><b>3 Saat</b></td>
+        </tr>
+                <tr>
+            <td>Communicative Skills</td>
+            <td align="center"><b>2 Saat</b></td>
+        </tr>
+                    <tr>
+                <td><b>TOPLAM</b></td>
+                <td align="center"><b>5 Saat</b></td>
+            </tr>
+                        <tr>
+            <td colspan="2"><b>0-39</b>: İlgili düzeyin hedeflerine ulaşamadı. / Has demonstrated almost no effort to reach the objectives specified by the level			</td>
+        </tr>
+    </table>
+            
+            
+            
+            
+</td>
+    </tr>
+</table>
+<br/><br/>
+</td></tr>
+</table>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"NRJS-1b97bb0221aaed93003","applicationID":"542358461","transactionName":"ZQBXNRMCCEFUBRJdWFxKdAIVCglcGg4HTl5ACVwKTgsHSFwUCl1cQQxbABdMCVVHFhRRR0YXVA8SCBRbRRI=","queueTime":0,"applicationTime":498,"atts":"SUdUQ1sYG08=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
 </html>
